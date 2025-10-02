@@ -263,6 +263,94 @@
   text-align: center; 
 }
     }
+    /* ============================= */
+/* BREAKPOINT: TABLET (≤ 768px)  */
+/* ============================= */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 72px 0 56px; }
+  .hero h1 { font-size: 34px; }
+  .hero p { font-size: 16px; }
+
+  nav ul { gap: 14px; flex-wrap: wrap; }
+  nav a { font-size: 14px; }
+
+  .services-grid,
+  .course-grid,
+  .edition-cards,
+  .tools-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-grid { grid-template-columns: 1fr; gap: 20px; }
+  .actions { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+/* ======================================= */
+/* BREAKPOINT: MOBILE PEQUENO (≤ 480px)    */
+/* ======================================= */
+@media (max-width: 480px) {
+  .hero { padding: 56px 0 44px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .cta-button { padding: 12px 18px; font-size: 15px; }
+
+  .logo { max-height: 48px; }
+  .location-text { font-size: 11px; }
+
+  .services-grid,
+  .course-grid,
+  .edition-cards,
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .actions { grid-template-columns: 1fr; gap: 8px; }
+  .footer-content { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ======================================= */
+/* CARROSSEL HORIZONTAL NO MOBILE PEQUENO  */
+/* ======================================= */
+@media (max-width: 480px) {
+  .services-grid,
+  .course-grid,
+  .edition-cards,
+  .tools-grid {
+    display: flex; 
+    overflow-x: auto;
+    gap: 14px;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .services-grid > *,
+  .course-grid > *,
+  .edition-cards > *,
+  .tools-grid > * {
+    flex: 0 0 82%;   /* ajuste: 82% ocupa quase a tela toda */
+    scroll-snap-align: start;
+  }
+
+  .services-grid::-webkit-scrollbar,
+  .course-grid::-webkit-scrollbar,
+  .edition-cards::-webkit-scrollbar,
+  .tools-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  .services-grid::-webkit-scrollbar-thumb,
+  .course-grid::-webkit-scrollbar-thumb,
+  .edition-cards::-webkit-scrollbar-thumb,
+  .tools-grid::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.18);
+    border-radius: 999px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -2407,3 +2495,4 @@ categoryTabs.forEach(tab => {
   </script>
 </body>
 </html>
+
