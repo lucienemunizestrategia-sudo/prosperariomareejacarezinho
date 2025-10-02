@@ -263,7 +263,7 @@
   text-align: center; 
 }
     }
-    /* ============================= */
+   /* ============================= */
 /* BREAKPOINT: TABLET (≤ 768px)  */
 /* ============================= */
 @media (max-width: 768px) {
@@ -300,11 +300,12 @@
   .logo { max-height: 48px; }
   .location-text { font-size: 11px; }
 
+  /* Empilha todas as grades */
   .services-grid,
   .course-grid,
-  .edition-cards,
-  .tools-grid {
-    grid-template-columns: 1fr;
+  .edition-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     gap: 16px;
   }
 
@@ -313,12 +314,9 @@
 }
 
 /* ======================================= */
-/* CARROSSEL HORIZONTAL NO MOBILE PEQUENO  */
+/* CARROSSEL SOMENTE NAS FERRAMENTAS       */
 /* ======================================= */
 @media (max-width: 480px) {
-  .services-grid,
-  .course-grid,
-  .edition-cards,
   .tools-grid {
     display: flex;
     overflow-x: auto;
@@ -328,30 +326,20 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .services-grid > *,
-  .course-grid > *,
-  .edition-cards > *,
   .tools-grid > * {
     flex: 0 0 82%;
     scroll-snap-align: start;
   }
 
-  .services-grid::-webkit-scrollbar,
-  .course-grid::-webkit-scrollbar,
-  .edition-cards::-webkit-scrollbar,
   .tools-grid::-webkit-scrollbar {
     height: 6px;
   }
-  .services-grid::-webkit-scrollbar-thumb,
-  .course-grid::-webkit-scrollbar-thumb,
-  .edition-cards::-webkit-scrollbar-thumb,
   .tools-grid::-webkit-scrollbar-thumb {
     background: rgba(0,0,0,.18);
     border-radius: 999px;
   }
 }
-
-   
+ 
   </style>
 </head>
 <body>
@@ -2496,6 +2484,7 @@ categoryTabs.forEach(tab => {
   </script>
 </body>
 </html>
+
 
 
 
