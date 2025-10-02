@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prospera Rio — Educação Empresarial</title>
+  <meta name="description" content="Prospera Rio: educação empresarial, cursos, oficinas e ferramentas práticas para empreendedores. Inclui a oficina Fala que Vende como curso completo." />
+  <meta property="og:title" content="Prospera Rio — Educação Empresarial" />
+  <meta property="og:description" content="Cursos, oficinas e ferramentas para empreendedores. Copywriting, vendas, finanças, estoque e mais." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1x5sNkC9vd7CI78y0xdkWvgoadxPEMcIf=w1200" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --azul-principal: #092040;
+      --azul-secundaria: #00B7D7;
+      --amarelo-acento: #ECC203;
+      --cinza-neutro: #EFF1F3;
+      --azul-escuro: #021738;
+      --branco: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--azul-escuro);
+      background: var(--branco);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      background: var(--branco);
+      box-shadow: 0 2px 10px rgba(9, 32, 64, 0.1);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
+    .logo-section { display: flex; flex-direction: column; align-items: flex-start; }
+    .logo { max-height: 56px; width: auto; }
+    .location-text { color: var(--amarelo-acento); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; margin-top: 6px; letter-spacing: 1px; }
+
+    nav ul { display: flex; list-style: none; gap: 28px; }
+    nav a { text-decoration: none; color: var(--azul-escuro); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 15px; }
+    nav a:hover, nav a.active { color: var(--azul-secundaria); }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--azul-principal), var(--azul-escuro)); color: var(--branco); padding: 96px 0 72px; text-align: center; }
+    .hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 42px; margin-bottom: 16px; }
+    .hero p { font-size: 18px; opacity: .92; margin-bottom: 28px; }
+    .cta-button { background: var(--amarelo-acento); color: var(--azul-escuro); padding: 14px 28px; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-block; transition: .2s; }
+    .cta-button:hover { filter: brightness(0.95); transform: translateY(-1px); }
+
+    /* Sections */
+    .section { padding: 72px 0; }
+    .section-title { background: var(--azul-principal); color: var(--branco); padding: 18px; text-align: center; border-radius: 10px; }
+    .section-title h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 28px; }
+.category-tabs { 
+  display: flex; 
+  gap: 12px; 
+  margin-bottom: 32px; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+}
+
+.category-tab { 
+  background: var(--cinza-neutro); 
+  color: var(--azul-principal); 
+  border: 2px solid var(--cinza-neutro); 
+  padding: 12px 24px; 
+  border-radius: 8px; 
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 600; 
+  font-size: 15px; 
+  cursor: pointer; 
+  transition: .2s; 
+}
+
+.category-tab:hover { 
+  border-color: var(--azul-secundaria); 
+}
+
+.category-tab.active { 
+  background: var(--azul-secundaria); 
+  color: var(--branco); 
+  border-color: var(--azul-secundaria); 
+}
+
+.category-content { 
+  display: none; 
+}
+
+.category-content.active { 
+  display: block; 
+}
+
+    /* Cards Grid */
+    .services-grid, .course-grid, .edition-cards, .tools-grid {
+      display: grid; gap: 28px; margin-top: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tools-grid a.tool-card {
+  display: block;
+  background: #fff; /* mantém fundo branco ou do seu tema */
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none; /* remove azul/sublinhado */
+  color: inherit; /* mantém cor padrão do texto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.tools-grid a.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.tool-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tool-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.tool-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--azul-secundaria, #00B7D7); /* pega da paleta */
+}
+
+    .service-card { background: var(--cinza-neutro); padding: 24px; border-left: 4px solid var(--azul-secundaria); border-radius: 10px; transition: .3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0, 183, 215, 0.2); }
+    .service-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 20px; margin-bottom: 12px; }
+
+    .course-card { background: var(--branco); border-radius: 10px; overflow: hidden; box-shadow: 0 6px 16px rgba(9,32,64,.1); transition: .3s; display: flex; flex-direction: column; }
+    .course-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(9,32,64,.14); }
+    .course-header { background: var(--azul-secundaria); color: var(--branco); padding: 18px; }
+    .course-header h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; }
+    .course-content { padding: 20px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
+    .course-features { list-style: none; }
+    .course-features li { padding-left: 18px; position: relative; font-size: 14px; margin: 6px 0; }
+    .course-features li::before { content: "✓"; position: absolute; left: 0; color: var(--azul-secundaria); font-weight: 700; }
+
+    .btn, .course-button, .edition-button { background: var(--amarelo-acento); color: var(--azul-escuro); border: 0; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; padding: 12px 18px; text-align: center; text-decoration: none; cursor: pointer; transition: .2s; display: inline-block; }
+    .course-button, .edition-button { width: 100%; font-size: 15px; }
+    .btn:hover, .course-button:hover, .edition-button:hover { filter: brightness(0.95); transform: translateY(-1px); }
+
+    /* Publications */
+    .publication-card { background: var(--branco); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(9, 32, 64, .12); }
+    .publication-header { background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundaria)); color: var(--branco); padding: 28px; text-align: center; }
+    .publication-header h3 { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 700; }
+    .publication-content { padding: 24px; }
+
+    .edition-card { border: 2px solid var(--cinza-neutro); border-radius: 10px; padding: 20px; transition: .25s; }
+    .edition-card:hover { border-color: var(--azul-secundaria); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,183,215,.18); }
+    .edition-number { background: var(--amarelo-acento); color: var(--azul-escuro); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; padding: 6px 12px; border-radius: 99px; display: inline-block; margin-bottom: 10px; }
+    .edition-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    .highlight-tag { background: var(--azul-secundaria); color: var(--branco); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 14px; }
+
+    /* Tools */
+    .tool-card { background: var(--branco); border: 2px solid var(--cinza-neutro); border-radius: 10px; padding: 22px; text-align: center; transition: .25s; }
+    .tool-card:hover { border-color: var(--azul-secundaria); transform: translateY(-2px); }
+    .tool-icon { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 14px; display: grid; place-items: center; background: var(--azul-secundaria); color: var(--branco); font-weight: 900; font-size: 22px; }
+.edition-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.edition-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Botão padrão (Download PDF) */
+.edition-buttons a:nth-child(1) {
+  background-color: #092040; /* Azul Principal */
+  color: #FFFFFF;
+}
+
+.edition-buttons a:nth-child(1):hover {
+  background-color: #021738; /* Azul Escuro */
+}
+
+/* Botão secundário (Acessar Online) */
+.edition-buttons a:nth-child(2) {
+  background-color: #ECC203; /* Amarelo Acento */
+  color: #092040; /* Azul Principal */
+}
+
+.edition-buttons a:nth-child(2):hover {
+  background-color: #d4ab00; /* Amarelo mais escuro */
+}
+
+    /* Course Detail */
+    .section.alt { background: var(--cinza-neutro); }
+    .course-detail { background: var(--branco); border-radius: 12px; box-shadow: 0 10px 26px rgba(9,32,64,.12); overflow: hidden; }
+    .course-banner { background: linear-gradient(135deg, var(--azul-secundaria), var(--azul-principal)); color: var(--branco); padding: 28px; }
+    .course-banner h2 { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    .course-banner p { opacity: .95; margin-bottom: 12px; }
+
+    .detail-grid { display: grid; gap: 28px; grid-template-columns: 2fr 1fr; padding: 24px; }
+    .card { background: var(--cinza-neutro); border-radius: 10px; padding: 18px; }
+    .card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .list { margin-left: 18px; }
+    .list li { margin: 6px 0; }
+
+    .accordion { border-top: 1px solid #e3e7ea; }
+    .accordion details { border-bottom: 1px solid #e3e7ea; padding: 14px 0; }
+    .accordion summary { cursor: pointer; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+    .accordion .acc-body { padding: 10px 0 0 0; }
+
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge { background: var(--azul-principal); color: var(--branco); font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 99px; }
+
+    .actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 14px; }
+    .ghost { background: transparent; border: 2px solid var(--azul-principal); color: var(--azul-principal); }
+
+    /* Footer */
+    footer { background: var(--azul-principal); color: var(--branco); padding: 44px 0 26px; margin-top: 40px; }
+    .footer-content { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 20px; }
+    .footer-section h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; margin-bottom: 12px; color: var(--amarelo-acento); }
+    .footer-section ul { list-style: none; }
+    .footer-section a { color: var(--branco); text-decoration: none; }
+    .footer-section a:hover { color: var(--amarelo-acento); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 14px; text-align: center; font-size: 14px; }
+
+    /* Course pages visibility */
+    .course-page { display: none; }
+    .course-page.active { display: block; }
+
+    /* Responsive */
+    @media (max-width: 900px) { 
+      .detail-grid { grid-template-columns: 1fr; } 
+      nav ul { gap: 16px; flex-wrap: wrap; }
+      nav a { font-size: 14px; }
+      .hero h1 { font-size: 32px; }
+      .course-grid { grid-template-columns: 1fr; }
+.category-tabs { 
+  flex-direction: column; 
+}
+
+.category-tab { 
+  text-align: center; 
+}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <img class="logo" src="https://lh3.googleusercontent.com/d/1x5sNkC9vd7CI78y0xdkWvgoadxPEMcIf=w800" alt="Prospera Rio — Logomarca" />
+          <div class="location-text">MARÉ · JACAREZINHO</div>
+        </div>
+        <nav aria-label="Principal">
+          <ul>
+            <li><a href="#inicio" class="navlink">Início</a></li>
+            <li><a href="#servicos" class="navlink">Serviços</a></li>
+            <li><a href="#cursos" class="navlink">Cursos</a></li>
+            <li><a href="#publicacoes" class="navlink">Publicações</a></li>
+            <li><a href="#ferramentas" class="navlink">Ferramentas</a></li>
+            <li><a href="#contato" class="navlink">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1>Prospera Rio</h1>
+        <p>Educação empresarial com método prático, linguagem acessível e impacto direto no faturamento.</p>
+       <a href="#cursos" class="cta-button" aria-label="Ir para seção de cursos e oficinas">
+  Explore Nossos Cursos
+</a>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-title"><h2>Nossos Serviços</h2></div>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Diagnóstico Empresarial</h3>
+            <p>Análise completa com plano de ação personalizado para organizar finanças, vendas e operações.</p>
+          </div>
+          <div class="service-card">
+            <h3>Consultoria Especializada</h3>
+            <p>Acompanhamento estratégico com metas, indicadores e rituais simples de execução.</p>
+          </div>
+          <div class="service-card">
+            <h3>Treinamentos Corporativos</h3>
+            <p>Capacitação de equipes com trilhas sob medida e materiais prontos para aplicar no dia seguinte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="cursos">
+      <div class="container">
+        <div class="section-title"><h2>Cursos e Oficinas</h2></div>
+<div class="category-tabs">
+  <button class="category-tab active" data-category="capacitacao">Capacitação Técnica</button>
+  <button class="category-tab" data-category="descomplica">Descomplica Negócios</button>
+  <button class="category-tab" data-category="seminarios">Seminários</button>
+</div>
+
+       <div class="category-content active" id="capacitacao">
+  <div class="course-grid">
+
+ <!-- Finanças Descomplicadas -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Finanças Descomplicadas</h3>
+              <p>Gestão e controle financeiro.</p>
+            </div>
+            <div class="course-content">
+              <p>Rotina financeira clara: fluxo de caixa, DRE simples e metas que cabem no bolso.</p>
+              <ul class="course-features">
+                <li>Fluxo de caixa + DRE</li>
+                <li>Metas por produto/serviço</li>
+                <li>Indicadores e rituais semanais</li>
+              </ul>
+              <a class="course-button" href="#curso-financas-descomplicadas">Acessar Curso</a>
+            </div>
+          </article>
+        
+ <!-- Precificação e Vendas -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Precificação e Vendas — Lucro Inteligente</h3>
+              <p>Preço certo + rotina comercial.</p>
+            </div>
+            <div class="course-content">
+              <p>Combine markup, margem e valor percebido com um funil simples de conversão.</p>
+              <ul class="course-features">
+                <li>Markup vs. margem e preço psicológico</li>
+                <li>Precificação por valor e concorrência</li>
+                <li>Funil, objeções e scripts de vendas</li>
+              </ul>
+              <a class="course-button" href="#curso-precificacao-vendas">Acessar Curso</a>
+            </div>
+          </article>
+
+ <!-- Gestão Financeira -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Gestão Financeira Empresarial</h3>
+              <p>Domine o caixa e a margem.</p>
+            </div>
+            <div class="course-content">
+              <p>Fluxo de caixa, indicadores e orçamento com planilhas prontas.</p>
+              <ul class="course-features">
+                <li>Planilhas automatizadas</li>
+                <li>Indicadores essenciais</li>
+                <li>Orçamento por centros de custo</li>
+              </ul>
+              <a class="course-button" href="#curso-gestao-financeira">Acessar Curso</a>
+            </div>
+          </article>
+
+<!-- Precificação (Calculadora) -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Calculadora de Precificação</h3>
+              <p>Preço certo, lucro certo.</p>
+            </div>
+            <div class="course-content">
+              <p>Markup, margem e comparação de cenários em poucos cliques.</p>
+              <ul class="course-features">
+                <li>Markup automático</li>
+                <li>Simulação de margem</li>
+                <li>Relatórios prontos</li>
+              </ul>
+              <a class="course-button" href="https://lucienemunizestrategia-sudo.github.io/calculadoradeprecificacao/">Acessar Calculadora</a>
+            </div>
+          </article>
+
+
+ <!-- Plano de Negócio -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Plano de Negócio Simplificado</h3>
+              <p>Planejamento estratégico prático.</p>
+            </div>
+            <div class="course-content">
+              <p>Monte seu plano de negócio em 1 página: missão, análise SWOT e metas SMART.</p>
+              <ul class="course-features">
+                <li>Canvas de modelo de negócio</li>
+                <li>Análise SWOT prática</li>
+                <li>Metas SMART e indicadores</li>
+              </ul>
+              <a class="course-button" href="#curso-plano-negocio">Acessar Curso</a>
+            </div>
+          </article>
+
+ <!-- Identidade de Marca -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Identidade de Marca e Comunicação</h3>
+              <p>Posicionamento e presença.</p>
+            </div>
+            <div class="course-content">
+              <p>Defina proposta de valor, tom de voz e crie conteúdo que posiciona e vende.</p>
+              <ul class="course-features">
+                <li>Proposta de valor e persona</li>
+                <li>Arquétipos e tom de voz</li>
+                <li>Roteiro de conteúdo e calendário</li>
+              </ul>
+              <a class="course-button" href="#curso-identidade-marca">Acessar Curso</a>
+            </div>
+          </article>
+
+           </div>
+</div>
+
+<div class="category-content" id="descomplica">
+  <div class="course-grid">
+                     
+                        <!-- Lucre Rápido -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Lucre Rápido — Ofertas Irresistíveis</h3>
+              <p>Vendas diárias com ofertas simples.</p>
+            </div>
+            <div class="course-content">
+              <p>Estruture ofertas que geram ação imediata usando copy, prova e WhatsApp.</p>
+              <ul class="course-features">
+                <li>Estrutura de oferta (headline, prova, CTA)</li>
+                <li>Matriz de dores e desejos</li>
+                <li>10 templates de ofertas diárias</li>
+              </ul>
+              <a class="course-button" href="#curso-lucre-rapido">Acessar Curso</a>
+            </div>
+          </article>
+
+          <!-- Lucro Escondido -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Lucro Escondido — Margem e Ticket Médio</h3>
+              <p>Aumente o lucro sem subir preços.</p>
+            </div>
+            <div class="course-content">
+              <p>Encontre margens nas brechas: mix, upsell, combos e eficiência operacional.</p>
+              <ul class="course-features">
+                <li>Diagnóstico de margem</li>
+                <li>Cross/upsell e combos</li>
+                <li>Redução de desperdícios</li>
+              </ul>
+              <a class="course-button" href="#curso-lucro-escondido">Acessar Curso</a>
+            </div>
+          </article>
+ <!-- Controle de Estoque -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Controle de Estoque</h3>
+              <p>Reposição e giro.</p>
+            </div>
+            <div class="course-content">
+              <p>Ponto de pedido, inventário e ficha técnica simplificada.</p>
+              <ul class="course-features">
+                <li>Modelo de inventário</li>
+                <li>Ponto de reposição</li>
+                <li>Curva ABC</li>
+              </ul>
+              <a class="course-button" href="#curso-controle-estoque">Acessar Curso</a>
+            </div>
+          </article>
+
+          
+<!-- WhatsApp Business -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Tutorial WhatsApp Business</h3>
+              <p>Atenda, venda e fidelize.</p>
+            </div>
+            <div class="course-content">
+              <p>Configuração profissional, catálogo, mensagens e métricas.</p>
+              <ul class="course-features">
+                <li>Passo a passo completo</li>
+                <li>Mensagens automáticas</li>
+                <li>Indicadores de atendimento</li>
+              </ul>
+              <a class="course-button" href="https://lucienemunizestrategia-sudo.github.io/guialoja/whatsapp.html">Ver Tutorial</a>
+            </div>
+          </article>
+
+
+ <!-- Fala que Vende -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Oficina: "Fala que Vende"</h3>
+              <p>Copywriting e Storytelling com ChatGPT</p>
+            </div>
+            <div class="course-content">
+              <p>Escreva textos que geram atenção, desejo e ação — mesmo só com o celular.</p>
+              <ul class="course-features">
+                <li>Fundamentos de copywriting</li>
+                <li>Storytelling que vende</li>
+                <li>Prompts prontos no ChatGPT</li>
+              </ul>
+              <a class="course-button" href="#curso-fala-que-vende">Acessar Curso</a>
+            </div>
+          </article>
+
+          
+          <!-- Shopee -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Tutorial Shopee</h3>
+              <p>Venda online do zero.</p>
+            </div>
+            <div class="course-content">
+              <p>Criação de loja, SEO de anúncios e campanhas.</p>
+              <ul class="course-features">
+                <li>Cadastro guiado</li>
+                <li>Otimização de anúncios</li>
+                <li>Promoções e cupons</li>
+              </ul>
+              <a class="course-button" href="#curso-shopee">Acessar Tutorial</a>
+            </div>
+          </article>
+
+          <!-- Mercado Livre -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Tutorial Mercado Livre</h3>
+              <p>Venda no maior marketplace.</p>
+            </div>
+            <div class="course-content">
+              <p>Reputação, logística e anúncios de alta performance.</p>
+              <ul class="course-features">
+                <li>Mercado Envios</li>
+                <li>SEO de anúncios</li>
+                <li>Métricas de qualidade</li>
+              </ul>
+              <a class="course-button" href="https://lucienemunizestrategia-sudo.github.io/guiacompletomercadolivre/">Ver Tutorial</a>
+            </div>
+          </article>
+
+          <!-- Kit Bônus WhatsApp -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>Kit Bônus WhatsApp Business</h3>
+              <p>Textos que convertem.</p>
+            </div>
+            <div class="course-content">
+              <p>Templates de mensagens com copywriting e storytelling.</p>
+              <ul class="course-features">
+                <li>Captação e qualificação</li>
+                <li>Fechamento e objeções</li>
+                <li>Pós-venda e fidelização</li>
+              </ul>
+              <a class="course-button" href="https://casaprosperamare.github.io/osegredodowhatsapp/quefatura.html">Baixar Kit</a>
+            </div>
+          </article>
+
+<article class="course-card">
+  <div class="course-header">
+    <h3>Google Meu Negócio</h3>
+    <p>Presença Online Estratégica</p>
+  </div>
+  <div class="course-content">
+    <p>Aprenda a usar o Google Meu Negócio para atrair clientes, aumentar sua visibilidade e vender mais todos os dias.</p>
+    <ul class="course-features">
+      <li>Cadastro e otimização do perfil</li>
+      <li>Como aparecer no Google Maps</li>
+      <li>Estratégias para avaliações e engajamento</li>
+    </ul>
+    <a class="course-button" href="#curso-google-meu-negocio">Acessar Curso</a>
+  </div>
+</article>
+
+                  
+          <!-- E-books -->
+          <article class="course-card">
+            <div class="course-header">
+              <h3>E-books Empresariais</h3>
+              <p>Biblioteca digital.</p>
+            </div>
+            <div class="course-content">
+              <p>Marketing, vendas, finanças e inovação com download imediato.</p>
+              <ul class="course-features">
+                <li>Conteúdo técnico acessível</li>
+                <li>Quadros comparativos</li>
+                <li>Glossário e bibliografia</li>
+              </ul>
+              <a class="course-button" href="#publicacoes">Ver E-books</a>
+            </div>
+          </article>
+       
+</div>
+</div>
+
+<div class="category-content" id="seminarios">
+  <div class="course-grid">
+
+
+                  
+         
+<article class="course-card">
+              <div class="course-header">
+                <h3>Empreender por Escolha</h3>
+                <p>Seminário de Empreendedorismo</p>
+              </div>
+              <div class="course-content">
+                <p>Descubra se empreender é para você e construa um plano sólido de negócio.</p>
+                <ul class="course-features">
+                  <li>Autoconhecimento empreendedor</li>
+                  <li>Validação de ideias</li>
+                  <li>Primeiros passos práticos</li>
+                </ul>
+                <a class="course-button" href="#seminario-escolha">Acessar Seminário</a>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <div class="course-header">
+                <h3>Empreendedorismo e Sustentabilidade</h3>
+                <p>Seminário de Impacto Social</p>
+              </div>
+              <div class="course-content">
+                <p>Negócios com propósito: lucro, impacto social e sustentabilidade na prática.</p>
+                <ul class="course-features">
+                  <li>Modelos sustentáveis</li>
+                  <li>Impacto social e financeiro</li>
+                  <li>Casos de sucesso</li>
+                </ul>
+                <a class="course-button" href="#seminario-sustentabilidade">Acessar Seminário</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+    </section>
+
+    <!-- PUBLICAÇÕES / JORNAIS -->
+<section class="section" id="publicacoes">
+  <div class="container">
+    <div class="section-title"><h2>Publicações e Jornais</h2></div>
+    <div class="publication-card">
+      <div class="publication-header">
+        <h3>Jornal Prospera Rio</h3>
+        <p>Informação empresarial prática e aplicável.</p>
+      </div>
+      <div class="publication-content">
+        <div class="edition-cards">
+          
+          <!-- Edição 01 -->
+          <div class="edition-card">
+            <div class="edition-number">Edição #01</div>
+            <h4>Controle de Estoque</h4>
+            <p>Gestão eficiente de inventário com modelos e estratégias para otimizar seu estoque.</p>
+            <div class="edition-highlights">
+              <span class="highlight-tag">Estoque</span>
+              <span class="highlight-tag">Inventário</span>
+              <span class="highlight-tag">Curva ABC</span>
+            </div>
+            <div class="edition-buttons">
+              <a class="edition-button" href="https://drive.google.com/file/d/12Z9XRwTnIgngDdCXJXxpUPicnwp3Eive/view?usp=sharing" target="_blank">Download PDF</a>
+              <a class="edition-button" href="https://lucienemunizestrategia-sudo.github.io/jornal/" target="_blank">Acessar Online</a>
+            </div>
+          </div>
+
+          <!-- Edição 02 -->
+          <div class="edition-card">
+            <div class="edition-number">Edição #02</div>
+            <h4>Fluxo de Caixa</h4>
+            <p>Domine o controle financeiro com técnicas de fluxo de caixa, projeções e análise de liquidez.</p>
+            <div class="edition-highlights">
+              <span class="highlight-tag">Finanças</span>
+              <span class="highlight-tag">Fluxo de Caixa</span>
+              <span class="highlight-tag">Liquidez</span>
+            </div>
+            <div class="edition-buttons">
+              <a class="edition-button" href="https://drive.google.com/file/d/1SQH2jt32jIVJNxifq5biNxZWnsUmD-vV/view?usp=sharing" target="_blank">Download PDF</a>
+              <a class="edition-button" href="https://lucienemunizestrategia-sudo.github.io/jornalfluxodecaixa/" target="_blank">Acessar Online</a>
+            </div>
+          </div>
+
+          <!-- Continue replicando para as próximas edições -->
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- FERRAMENTAS -->
+<section class="section alt" id="ferramentas">
+  <div class="container">
+    <div class="section-title"><h2>Ferramentas e Recursos</h2></div>
+    <div class="tools-grid">
+
+      <a href="https://lucienemunizestrategia-sudo.github.io/calculadoradeprecificacao/" target="_blank" class="tool-card">
+        <div class="tool-icon">₹</div>
+        <h3>Calculadora de Precificação</h3>
+        <p>Defina preços estratégicos considerando custos, margem e mercado.</p>
+      </a>
+
+      <a href="https://casaprosperamare.github.io/tutorialinstalacaofluxodecaixa/" target="_blank" class="tool-card">
+        <div class="tool-icon">FC</div>
+        <h3>Sistema de Fluxo de Caixa</h3>
+        <p>Controle entradas e saídas com visão diária, semanal e mensal.</p>
+      </a>
+
+      <a href="https://lucienemunizestrategia-sudo.github.io/tutorialcontroledeestoque/index.html" target="_blank" class="tool-card">
+        <div class="tool-icon">CE</div>
+        <h3>Controle de Estoque</h3>
+        <p>Ponto de reposição, curva ABC e inventário simplificado.</p>
+      </a>
+
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">DE</div>
+        <h3>Diagnóstico Empresarial</h3>
+        <p>Questionários e plano de ação para cada realidade de negócio.</p>
+      </a>
+
+      <a href="https://lucienemunizestrategia-sudo.github.io/guialoja/whatsapp.html" target="_blank" class="tool-card">
+        <div class="tool-icon">WA</div>
+        <h3>WhatsApp Business</h3>
+        <p>Transforme o WhatsApp no seu principal canal de vendas.</p>
+      </a>
+
+      <a href="https://lucienemunizestrategia-sudo.github.io/guiacompletoshopee/" target="_blank" class="tool-card">
+        <div class="tool-icon">SP</div>
+        <h3>Shopee</h3>
+        <p>Loja virtual do zero com SEO e campanhas práticas.</p>
+      </a>
+
+      <a href="https://lucienemunizestrategia-sudo.github.io/guiacompletomercadolivre/" target="_blank" class="tool-card">
+        <div class="tool-icon">ML</div>
+        <h3>Mercado Livre</h3>
+        <p>Anúncios de alta performance e reputação positiva.</p>
+      </a>
+
+      <a href="https://casaprosperamare.github.io/osegredodowhatsapp/quefatura.html" target="_blank" class="tool-card">
+        <div class="tool-icon">MSG</div>
+        <h3>Kit Mensagens WhatsApp</h3>
+        <p>Templates profissionais com copywriting e storytelling para conversão.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- ===================================================== -->
+    <!-- PÁGINAS DE DETALHES DOS CURSOS — MODELO UNIFICADO     -->
+    <!-- ===================================================== -->
+
+    <!-- CURSO: FALA QUE VENDE -->
+    <section class="section course-page" id="curso-fala-que-vende">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Fala que Vende — Copywriting e Storytelling com ChatGPT</h2>
+            <p>Curso/oficina 100% prático para criar textos que atraem, convencem e vendem — com celular simples e comandos fáceis.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h (oficina) · 4 módulos</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + templates + exercícios</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;">
+            <a class="btn ghost" href="#cursos">Voltar para Cursos</a>
+          </div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                  <li>Compreender fundamentos (gatilhos, proposta de valor, CTA).</li>
+                  <li>Aplicar storytelling em posts, mensagens e páginas simples.</li>
+                  <li>Usar prompts prontos no ChatGPT para acelerar a escrita.</li>
+                  <li>Publicar conteúdos consistentes que geram leads e vendas.</li>
+                </ul>
+              </div>
+
+              <div class="card accordion" style="margin-top: 18px;">
+                <details open>
+                  <summary>Estrutura do Curso (Ementa)</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li><strong>Introdução:</strong> diferença entre falar e vender. Neurociência da atenção e persuasão.</li>
+        <li><strong>Copywriting:</strong> estruturas simples de copy e a fórmula AIDA (Atenção-Interesse-Desejo-Ação).</li>
+        <li><strong>Storytelling:</strong> como contar histórias que geram conexão e estrutura de narrativa para vendas.</li>
+        <li><strong>ChatGPT na Prática:</strong> criação de prompts e roteiros de vendas com IA.</li>
+        <li><strong>Mão na Massa:</strong> dinâmica de fala de 1 minuto com feedback coletivo e ajustes práticos.</li>
+      </ol>
+                     </div>
+                </details>
+                <details>
+  <summary>Plano de Ensino</summary>
+  <div class="acc-body">
+    <ul class="list">
+      <li><strong>Metodologia:</strong> Exposição dialogada, dinâmica prática e exercícios no ChatGPT</li>
+      <li><strong>Avaliação:</strong> Fala de vendas estruturada em 1 minuto validada em grupo</li>
+      <li><strong>Carga Horária:</strong> 2 horas (1h teórica + 1h prática)</li>
+      <li><strong>Modalidade:</strong> Presencial na Casa Próspera Maré</li>
+    </ul>
+  </div>
+</details>
+                <details>
+                  <summary>Para Quem é</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Empreendedores iniciantes no digital.</li>
+                      <li>Comerciantes locais com tempo curto.</li>
+                      <li>Quem quer vender todos os dias com conteúdo simples.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <p>Selecione uma opção abaixo:</p>
+                <div class="actions">
+                  <a class="btn" href="#contato">Inscrever-se (Turma Presencial)</a>
+                  <a class="btn ghost" href="#contato">Solicitar Versão Online</a>
+                </div>              
+</div>
+
+              <div class="card" style="margin-top: 18px;">
+                <h3>Requisitos</h3>
+                <ul class="list">
+                  <li>Celular com WhatsApp ou acesso ao ChatGPT Web.</li>
+                  <li>Conta no Instagram ou página de vendas.</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin-top: 18px;">
+                <h3>Certificado</h3>
+                <p>Certificado Prospera Rio mediante presença e execução dos exercícios.</p>
+              </div>
+<!-- MATERIAIS DE APOIO — FALA QUE VENDE -->
+<div class="card" style="margin-top:18px; --pr: var(--azul-principal,#092040); --sec: var(--azul-secundaria,#00B7D7); --neu: var(--cinza-neutro,#EFF1F3); --bg: var(--branco,#FFFFFF);">
+  <h3 style="margin-bottom:12px;">Materiais de Apoio</h3>
+
+  <!-- Grupo 1: Didáticos -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Materiais Didáticos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1aS9ukLPx1fp2SA34cAcYClsE5JEVS7nB/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Slides da Oficina (PDF)
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1XWSkbHkP4_wXoC9BnGTBcQIE7FxlNK5c/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ensino — Jacarezinho
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1dQ8bot7ymzdzznZp1YlyUY2rNmoM4wYy/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ensino — Maré
+    </a>
+  </div>
+
+  <!-- separador -->
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 2: Aplicação e Prática -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Aplicação e Prática</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1YqaKKlXBsY3jqIOnB8jEIL6nqn4yA7WV/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Roteiro de Storytelling
+    </a>
+
+    <a class="btn ghost"
+       href="https://casaprosperamare.github.io/osegredodowhatsapp/quefatura.html"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Kit de Mensagens (Copywriting)
+    </a>
+
+    <a class="btn ghost"
+       href="#contato"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Caderno de Atividades
+    </a>
+  </div>
+
+  <!-- hover consistente (ajuste o seletor de acordo com o id da sua seção do curso) -->
+  <style>
+    #curso-fala-que-vende .card .btn.ghost:hover,
+    .course-page .card .btn.ghost:hover {
+      background: var(--neu);
+      border-color: var(--sec);
+    }
+  </style>
+</div>
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: LUCRE RÁPIDO -->
+    <section class="section course-page" id="curso-lucre-rapido">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Lucre Rápido — O Segredo das Ofertas Irresistíveis</h2>
+            <p>Crie ofertas diárias que geram vendas no mesmo dia, usando copy simples e WhatsApp.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + templates</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;">
+            <a class="btn ghost" href="#cursos">Voltar para Cursos</a>
+          </div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                  <li>Compreender a diferença entre produto e oferta irresistível.</li>
+    <li>Aplicar a fórmula: Dor + Transformação + Produto + Gatilhos Mentais.</li>
+    <li>Criar ofertas aplicáveis ao próprio negócio durante a oficina.</li>
+    <li>Identificar dores do cliente e transformar em valor percebido.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Estrutura do Curso (Ementa)</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li><strong>Produto vs Oferta:</strong> diferenças e impactos nas vendas diretas.</li>
+        <li><strong>A Fórmula da Oferta Irresistível:</strong> Dor + Transformação + Produto + Gatilhos Mentais.</li>
+        <li><strong>Exemplos de Dores Reais:</strong> como transformar problemas em valor percebido.</li>
+        <li><strong>Criação Prática:</strong> construção de uma oferta real para o seu negócio com materiais de apoio.</li>
+        <li><strong>Próximos Passos:</strong> estratégias para divulgação e validação da oferta criada.</li>
+                    </ol>
+                  </div>
+                </details>
+               <details>
+  <summary>Plano de Ensino</summary>
+  <div class="acc-body">
+    <ul class="list">
+      <li><strong>Metodologia:</strong> Exposição dialogada, dinâmica prática e exercícios no ChatGPT</li>
+      <li><strong>Avaliação:</strong> Fala de vendas estruturada em 1 minuto validada em grupo</li>
+      <li><strong>Carga Horária:</strong> 2 horas (1h teórica + 1h prática)</li>
+      <li><strong>Modalidade:</strong> Presencial na Casa Próspera Maré</li>
+    </ul>
+  </div>
+</details>
+                <details>
+                  <summary>Para Quem é</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Empreendedores que querem vender todos os dias.</li>
+                      <li>Comerciantes com produtos sazonais.</li>
+                      <li>Quem quer dominar ofertas irresistíveis.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <p>Selecione uma opção abaixo:</p>
+                <div class="actions">
+                  <a class="btn" href="#contato">Turma Presencial</a>
+                  <a class="btn ghost" href="#contato">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list">
+                  <li>WhatsApp Business.</li>
+                  <li>Catálogo com 5 produtos.</li>
+                </ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3>
+                <p>Certificado Prospera Rio mediante presença e execução dos exercícios.</p>
+              </div>
+<!-- MATERIAIS DE APOIO — LUCRE RÁPIDO -->
+<div class="card" style="margin-top:18px; --pr: var(--azul-principal,#092040); --sec: var(--azul-secundaria,#00B7D7); --neu: var(--cinza-neutro,#EFF1F3); --bg: var(--branco,#FFFFFF);">
+  <h3 style="margin-bottom:12px;">Materiais de Apoio</h3>
+
+  <!-- Grupo 1: Recursos Didáticos -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Recursos Didáticos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1RjyinAQfv64MlX2H7rHlRNL-nB0xrJlu/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Slides da Oficina (PDF)
+    </a>
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1Dr_gLukN4LwaYTMeZLnNj6nhdG8ZXuyP/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ensino — Lucre Rápido
+    </a>
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1fls-do6KxrwSH9lJsNPpdUM7HSBzs6Y4/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Caderno de Atividades
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 2: Ferramentas da Oferta -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Ferramentas da Oferta</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/17ZEnO6sOrIomZtiLAyJH455oRhL_E7dE/edit?usp=drive_link&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Checklist da Oferta Irresistível
+    </a>
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1AzFzevLIlzbxpS85p-XVTxj5QVSKfmrG/edit?usp=drive_link&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Ficha de Construção da Oferta
+    </a>
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1K7HDvsgYdQh2xP5L4Gw_-oFm0oU7kRhO/edit?usp=drive_link&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Quadro de Gatilhos Mentais para Vendas
+    </a>
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1YqaKKlXBsY3jqIOnB8jEIL6nqn4yA7WV/edit?usp=drive_link&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Roteiro de Storytelling para Vendas
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 3: E-books -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">E-books</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1u6pV-ILcKKHaJBHwENOWCXixqKJrnjE0/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       E-book Isca (Pré-oficina): 5 Segredos para Criar Ofertas Irresistíveis
+    </a>
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1-dlS3ZLSR4ovNZ98SGqitHzTp3qpdGYa/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       E-book Complementar (Pós-oficina): Lucre Rápido — Ofertas Irresistíveis
+    </a>
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1RjyinAQfv64MlX2H7rHlRNL-nB0xrJlu/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       E-book Digital: Lucro Rápido — Crie Ofertas em 7 Dias
+    </a>
+  </div>
+
+  <!-- Hover consistente -->
+  <style>
+    #curso-lucre-rapido .card .btn.ghost:hover { background: var(--neu); border-color: var(--sec); }
+  </style>
+</div>
+
+  </div>
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: LUCRO ESCONDIDO -->
+    <section class="section course-page" id="curso-lucro-escondido">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Lucro Escondido — Margem e Ticket Médio</h2>
+            <p>Encontre lucro onde ninguém está olhando: mix, combos, upsell, processos e perdas.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Intermediário</span>
+              <span class="badge">Formato: Aula + planilhas</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                  <li>Diagnosticar margem por produto/serviço.</li>
+                  <li>Montar combos, kits e estratégias de upsell/cross-sell.</li>
+                  <li>Reduzir desperdícios e refugo operacional.</li>
+                  <li>Elevar ticket médio com ofertas progressivas.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Mapa de Margens e Curva ABC.</li>
+                      <li>Combos, Kits e Bundles.</li>
+                      <li>Upsell/Cross-sell no PDV e no WhatsApp.</li>
+                      <li>Operação Enxuta: perdas e eficiência.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details>
+  <summary>Plano de Ensino</summary>
+  <div class="acc-body">
+    <ul class="list">
+      <li><strong>Metodologia:</strong> Exposição dialogada, dinâmica prática e exercícios no ChatGPT</li>
+      <li><strong>Avaliação:</strong> Fala de vendas estruturada em 1 minuto validada em grupo</li>
+      <li><strong>Carga Horária:</strong> 2 horas (1h teórica + 1h prática)</li>
+      <li><strong>Modalidade:</strong> Presencial na Casa Próspera Maré</li>
+    </ul>
+  </div>
+</details>
+ <details>
+                  <summary>Para Quem é</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Empreendedores que querem vender todos os dias.</li>
+                      <li>Comerciantes com produtos sazonais.</li>
+                      <li>Quem quer dominar ofertas irresistíveis.</li>
+                    </ul>
+                  </div>
+                </details>
+                           </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="#contato">Turma Presencial</a>
+                  <a class="btn ghost" href="#contato">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list">
+                  <li>Lista de produtos com preços e custos.</li>
+                  <li>Histórico básico de vendas.</li>
+                </ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3>
+                <p>Emitido mediante presença e atividades.</p>
+              </div>
+<!-- MATERIAIS DE APOIO — LUCRO ESCONDIDO (didático, sem duplicações) -->
+<div class="card" style="margin-top:18px; --pr: var(--azul-principal,#092040); --sec: var(--azul-secundaria,#00B7D7); --neu: var(--cinza-neutro,#EFF1F3); --bg: var(--branco,#FFFFFF);">
+  <h3 style="margin-bottom:12px;">Materiais de Apoio</h3>
+
+  <!-- Grupo 1: Recursos Didáticos (ofertado apenas na Maré) -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Recursos Didáticos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1PUZDUYVlr5OEYPUBvJ3S8B9qjTRTuJV4/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Slides da Oficina (PDF) — inclui Estudo de Caso “Maria da Marmita”
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1-MK0thWyiWsJQlEV8shtY_0V6Go4D_bC/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Caderno de Atividades Práticas — Lucro Escondido
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1Dr_gLukN4LwaYTMeZLnNj6nhdG8ZXuyP/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ensino — Maré
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 2: Diagnóstico e Ferramentas -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Diagnóstico e Ferramentas</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1ktgnVNF9HYJ32zjZ__gqLcLFgRwpXZCD/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Ficha Prática de Diagnóstico Financeiro
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1MF5EFns4ZIY4Z79PiJzHScu21dfllgLW/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Quadro de Erros Frequentes na Precificação
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 3: Planos e Execução -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Planos e Execução</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1mI6Pw-6h8eLFtM52F4Zds4idQno3kv0N/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ação Estratégico (Versão A — impresso)
+    </a>
+
+    <a class="btn ghost"
+      href="https://docs.google.com/document/d/1MvM88AIEIzFRU_tFjk31SWG5OiNHKd88/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+      target="_blank" rel="noopener"
+      style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Plano de Ação Estratégico (Versão B — impresso)
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 4: E-books -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">E-books</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1kwRoJOOZNHkzjtYhB8gvX117K1mgs7Qn/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       E-book Isca (Pré-oficina)
+    </a>
+
+    <!-- Caso tenha um arquivo específico de pós-oficina diferente dos slides, substitua o link abaixo -->
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1PUZDUYVlr5OEYPUBvJ3S8B9qjTRTuJV4/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       E-book Complementar (Pós-oficina)
+    </a>
+  </div>
+
+  <!-- Hover consistente -->
+  <style>
+    #curso-lucro-escondido .card .btn.ghost:hover { background: var(--neu); border-color: var(--sec); }
+  </style>
+</div>
+s            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: FINANÇAS DESCOMPLICADAS -->
+    <section class="section course-page" id="curso-financas-descomplicadas">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Finanças Descomplicadas — Rotina e Indicadores Essenciais</h2>
+            <p>Fluxo de caixa + DRE simples + metas por produto — na prática, sem complicação.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 3h</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + planilhas</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                <li>Implantar rotina financeira diária, semanal e mensal estruturada.</li>
+    <li>Construir DRE simples e analisar margem de contribuição.</li>
+    <li>Definir metas por produto e monitorar indicadores essenciais.</li>
+    <li>Aplicar disciplina financeira em 20 minutos por dia.</li>
+ 
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li><strong>Gestão Financeira — Pilar da Sustentabilidade:</strong> importância do controle financeiro para a longevidade do negócio.</li>
+        <li><strong>Análise de Contas — Olhos nos Números:</strong> interpretação estratégica dos dados financeiros.</li>
+        <li><strong>Contas a Pagar e a Receber — Organização é Escudo:</strong> controle de fluxo e previsibilidade.</li>
+        <li><strong>DRE — O Raio-X do Lucro:</strong> demonstração simplificada do resultado do exercício.</li>
+        <li><strong>Fluxo de Caixa — A Linha da Vida Financeira:</strong> previsão e controle do movimento de caixa.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details>
+  <summary>Plano de Ensino</summary>
+  <div class="acc-body">
+    <ul class="list">
+      <li><strong>Metodologia:</strong> Estudos de caso narrativos com simulação prática de markup e margem</li>
+      <li><strong>Avaliação:</strong> Simulação do preço ideal e justificativa do canal de venda</li>
+      <li><strong>Carga Horária:</strong> 2 horas (1h teórica + 1h prática)</li>
+      <li><strong>Modalidade:</strong> Presencial na Casa do Jacarezinho</li>
+    </ul>
+  </div>
+</details>
+<details>
+  <summary>Para Quem é</summary>
+  <div class="acc-body">
+    <ul class="list">
+      <li>Empreendedores que desejam organizar as finanças do negócio de forma simples e prática.</li>
+      <li>Comerciantes que precisam controlar entradas, saídas e fluxo de caixa.</li>
+      <li>Quem quer aprender a montar DRE, acompanhar resultados e planejar o crescimento.</li>
+      <li>Negócios informais que buscam dar o primeiro passo rumo à gestão financeira profissional.</li>
+      <li>Empreendedores que querem reduzir erros financeiros e aumentar o lucro real.</li>
+    </ul>
+  </div>
+</details>
+
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <div class="actions">
+                  <a class="btn" target="_blank" rel="noopener" href="https://casaprosperamare.github.io/tutorialinstalacaofluxodecaixa/">Instalar Fluxo de Caixa</a>
+                  <a class="btn ghost" href="https://forms.gle/ESABCtmU8rLGZaet9">Turma Presencial</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list">
+                  <li>Conta Google para utilizar a planilha.</li>
+                </ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3>
+                <p>Emitido mediante presença e lançamento de 7 dias de caixa.</p>
+              </div>
+<!-- MATERIAIS DE APOIO — FINANÇAS DESCOMPLICADAS -->
+<div class="card" style="margin-top:18px; --pr: #092040; --sec: #00B7D7; --neu: #EFF1F3; --bg:#FFFFFF;">
+  <h3 style="margin-bottom:12px;">Materiais de Apoio</h3>
+
+  <!-- Planos de Ensino -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Planos de Ensino</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost" href="https://docs.google.com/document/d/1V9W-4LCC-MdCH1LJax5NUuRK1xwH6Ew3/edit?usp=sharing" target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#fff; color:var(--pr); text-align:center;">
+       Jacarezinho
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1fm3UqnIoelNtJI7vmmebBD9LJ5Zq7hRl/edit?usp=sharing" target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#fff; color:var(--pr); text-align:center;">
+       Maré
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Recursos Didáticos -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Recursos Didáticos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost" href="https://drive.google.com/file/d/11e8wwvnHpQDrFOpTRgrfIkm8tRkNAwdR/view?usp=sharing" target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#fff; color:var(--pr); text-align:center;">
+       Slides da Oficina (Canva/PDF)
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1Bj-uEHMNMd9XssL4_w0Tsn-plGNjhSp6/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#fff; color:var(--pr); text-align:center;">
+       Caderno de Atividades
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1o-78_KGp_YeO7EeecdWAJm1s1L7lbj6D/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#fff; color:var(--pr); text-align:center;">
+       E-book Complementar
+    </a>
+  </div>
+
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Templates -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Templates</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost" href="https://docs.google.com/document/d/1gB9THTPptIwXoKBRAi2MhF02OlmUJLTM/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#fff; color:var(--pr); text-align:center;">
+       Gestão Financeira
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1qeuvMPbA10aNvTRbHc0Jce-6dJH7GaFX/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#fff; color:var(--pr); text-align:center;">
+       Contas a Pagar/Receber
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1FhnmriYIndKHAzhpgoG6WjWZ7nTNhCyY/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#fff; color:var(--pr); text-align:center;">
+       Fluxo de Caixa
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1m0wnlZer9WFY9u5TF-wTqSa-84zsMkeE/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#fff; color:var(--pr); text-align:center;">
+       DRE
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1Q1GydGzFvF7aUUUYmp3vFuYDtcHgnhaj/edit?usp=drive_link" target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#fff; color:var(--pr); text-align:center;">
+       Planner Financeiro
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/spreadsheets/d/19AmgJAhVqiPBgIqtT01o5TfaYIpO8f8v8IJK0Lq2GSM/edit?usp=sharing" target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#fff; color:var(--pr); text-align:center;">
+       Planilha DRE (para preencher)
+    </a>
+  </div>
+
+  <style>
+    #curso-financas .card .btn.ghost:hover {
+      background: var(--neu);
+      border-color: var(--sec);
+    }
+  </style>
+</div>
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: GESTÃO FINANCEIRA -->
+    <section class="section course-page" id="curso-gestao-financeira">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Gestão Financeira Empresarial — Caixa, Orçamento e Indicadores</h2>
+            <p>Do controle diário à visão de orçamento por centros de custo.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 4h</span>
+              <span class="badge">Nível: Intermediário</span>
+              <span class="badge">Formato: Aula + planilhas</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                  <li>Implantar orçamento e previsão de caixa.</li>
+                  <li>Definir centros de custo e metas.</li>
+                  <li>Acompanhar KPIs financeiros críticos.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Planejamento financeiro anual.</li>
+                      <li>Centros de custo e alocação.</li>
+                      <li>KPIs (margem, PE, ROAS básico).</li>
+                      <li>Rotinas e rituais de gestão.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details>
+                  <summary>Materiais</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Template de orçamento.</li>
+                      <li>Planilha de previsão de caixa.</li>
+                      <li>Dashboard simplificado.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="#contato">Turma Presencial</a>
+                  <a class="btn ghost" href="#contato">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list"><li>Histórico de despesas/receitas dos últimos 3 meses.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Emitido mediante presença e atividades.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: CONTROLE DE ESTOQUE -->
+    <section class="section course-page" id="curso-controle-estoque">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Controle de Estoque — Ponto de Reposição e Curva ABC</h2>
+            <p>Reposição na hora certa, giro saudável e inventário sem dor de cabeça.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + planilhas</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                  <li>Implantar inventário e ficha técnica simples.</li>
+                  <li>Calcular ponto de pedido e giro.</li>
+                  <li>Classificar produtos em Curva ABC.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Cadastro e inventário.</li>
+                      <li>Ponto de pedido e cobertura.</li>
+                      <li>Curva ABC e priorização.</li>
+                      <li>Rotina semanal de controle.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details>
+                  <summary>Materiais</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Planilha de Estoque (instalação guiada).</li>
+                      <li>Modelo de ficha técnica.</li>
+                      <li>Checklist de inventário.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <div class="actions">
+                  <a class="btn" target="_blank" rel="noopener" href="https://lucienemunizestrategia-sudo.github.io/tutorialcontroledeestoque/index.html">Instalar Controle de Estoque</a>
+                  <a class="btn ghost" href="#contato">Turma Presencial</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list"><li>Conta Google e lista de itens.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Emitido mediante presença e inventário inicial realizado.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: PRECIFICAÇÃO (CALCULADORA) -->
+    <section class="section course-page" id="curso-precificacao">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Calculadora de Precificação — Markup e Margem</h2>
+            <p>Preço certo, lucro certo: simule cenários e tome decisão com segurança.</p>
+            <div class="badges">
+              <span class="badge">Ferramenta Web</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Tutorial + planilha/app</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>O que você vai conseguir</h3>
+                <ul class="list">
+                  <li>Calcular markup e margem de contribuição.</li>
+                  <li>Comparar cenários de preço e lucro.</li>
+                  <li>Definir política de descontos.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Passos de Uso</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Insira custos fixos e variáveis.</li>
+                      <li>Defina markup alvo ou margem desejada.</li>
+                      <li>Simule descontos e metas de lucro.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details>
+                  <summary>Materiais</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Planilha/Aplicativo de Precificação.</li>
+                      <li>Guia rápido de margem x markup.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Acessar</h3>
+                <div class="actions">
+                  <a class="btn" href="https://lucienemunizestrategia-sudo.github.io/calculadoradeprecificacao/">Acessar Calculadora</a>
+                  <a class="btn ghost" href="#contato">Dúvidas</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list"><li>Custos e preços atuais.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Opcional (módulo complementar).</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: WHATSAPP BUSINESS -->
+    <section class="section course-page" id="curso-whatsapp-business">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>WhatsApp Business — Atendimento, Vendas e Fidelização</h2>
+            <p>Transforme o WhatsApp no seu principal canal de faturamento diário.</p>
+            <div class="badges">
+              <span class="badge">Tutorial Web</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Passo a passo</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Você vai aprender</h3>
+                <ul class="list">
+                  <li>Configuração profissional e catálogo.</li>
+                  <li>Mensagens automáticas e etiquetas.</li>
+                  <li>Indicadores de atendimento e rotina.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open>
+                  <summary>Conteúdo</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Conta, catálogo e perfil.</li>
+                      <li>Respostas rápidas e automações simples.</li>
+                      <li>Status que vende e métricas.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details>
+                  <summary>Materiais</summary>
+                  <div class="acc-body">
+                    <ul class="list">
+                      <li>Tutorial completo.</li>
+                      <li>Kit de Mensagens (conteúdo complementar).</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Acesso Direto</h3>
+                <div class="actions">
+                  <a class="btn" target="_blank" rel="noopener" href="https://lucienemunizestrategia-sudo.github.io/guialoja/whatsapp.html">Abrir Tutorial “Que Fatura”</a>
+                  <a class="btn ghost" href="https://casaprosperamare.github.io/osegredodowhatsapp/quefatura.html">Baixar Kit de Mensagens</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3>
+                <ul class="list"><li>WhatsApp Business instalado.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Opcional (módulo complementar).</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: SHOPEE -->
+    <section class="section course-page" id="curso-shopee">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Shopee — Loja Virtual do Zero</h2>
+            <p>Crie sua loja, publique produtos e inicie campanhas com baixo custo.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + tutorial</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados</h3>
+                <ul class="list">
+                  <li>Criar loja e configurar frete/pagamento.</li>
+                  <li>Otimizar anúncios (título, fotos, SEO).</li>
+                  <li>Campanhas, cupons e avaliação.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open><summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Cadastro guiado.</li>
+                      <li>SEO de anúncios e fotos que vendem.</li>
+                      <li>Promoções e logística.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details><summary>Materiais</summary>
+                  <div class="acc-body"><ul class="list"><li>Checklist de publicação.</li><li>Modelo de fotos e descrição.</li></ul></div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="#contato">Turma Presencial</a>
+                  <a class="btn ghost" href="https://lucienemunizestrategia-sudo.github.io/guiacompletoshopee/">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3><ul class="list"><li>Conta Shopee e 5 produtos.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Emitido mediante presença.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: MERCADO LIVRE -->
+    <section class="section course-page" id="curso-mercado-livre">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Mercado Livre — Anúncios de Alta Performance</h2>
+            <p>Reputação positiva, logística eficiente e SEO que ranqueia.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Intermediário</span>
+              <span class="badge">Formato: Aula + tutoria</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados</h3>
+                <ul class="list">
+                  <li>Configurar reputação e logística (Envios).</li>
+                  <li>Escrever anúncios que convertem.</li>
+                  <li>Métricas de qualidade e ranqueamento.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open><summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Configuração e reputação.</li>
+                      <li>SEO de anúncios e fotos.</li>
+                      <li>Métricas e growth.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details><summary>Materiais</summary>
+                  <div class="acc-body"><ul class="list"><li>Roteiros de resposta e pós-venda.</li></ul></div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="#contato">Turma Presencial</a>
+                  <a class="btn ghost" href="#contato">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3><ul class="list"><li>Conta Mercado Livre ativa.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Emitido mediante atividades.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: KIT WHATSAPP -->
+    <section class="section course-page" id="curso-kit-whatsapp">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Kit Bônus WhatsApp — Mensagens que Convertem</h2>
+            <p>Templates de captação, qualificação, fechamento e pós-venda.</p>
+            <div class="badges">
+              <span class="badge">Download</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Biblioteca de mensagens</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Você vai receber</h3>
+                <ul class="list">
+                  <li>Captação e qualificação.</li>
+                  <li>Fechamento e objeções.</li>
+                  <li>Pós-venda e fidelização.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open><summary>Como usar</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Copie e adapte ao seu nicho.</li>
+                      <li>Use etiquetas para organizar contatos.</li>
+                      <li>Mensure respostas e melhore semanalmente.</li>
+                    </ol>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="#contato">Solicitar Download</a>
+                  <a class="btn ghost" target="_blank" rel="noopener" href="https://lucienemunizestrategia-sudo.github.io/guialoja/whatsapp.html">Abrir Tutorial (apoio)</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3><ul class="list"><li>WhatsApp Business.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Não aplicável.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: IDENTIDADE DE MARCA -->
+    <section class="section course-page" id="curso-identidade-marca">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Identidade de Marca e Comunicação — Posicionamento que Vende</h2>
+            <p>Proposta de valor, tom de voz e presença consistente em todos os canais.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + exercícios</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados</h3>
+                <ul class="list">
+                  <li>Definir proposta de valor e persona.</li>
+                  <li>Escolher arquétipos e tom de voz.</li>
+                  <li>Montar calendário editorial simples.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open><summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li>Estratégia de marca para PMEs.</li>
+                      <li>Arquétipos e narrativa.</li>
+                      <li>Roteiro de conteúdo e métricas.</li>
+                    </ol>
+                  </div>
+                </details>
+                <details><summary>Materiais</summary>
+                  <div class="acc-body"><ul class="list"><li>Canvas de marca (1 página).</li><li>Modelos de posts e stories.</li></ul></div>
+                </details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="https://forms.gle/uiNKNYn97jPFNyXQ8">Turma Presencial</a>
+                  <a class="btn ghost" href="#contato">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3><ul class="list"><li>Conta no Instagram ou canal principal.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Emitido mediante atividades.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSO: PRECIFICAÇÃO E VENDAS -->
+<section class="section course-page" id="curso-precificacao-vendas">
+  <div class="container">
+    <div class="course-detail">
+      <div class="course-banner">
+        <h2>Precificação e Vendas — Lucro Inteligente</h2>
+        <p>Da formação de preço ao funil de conversão diário.</p>
+        <div class="badges">
+          <span class="badge">Carga horária: 3h</span>
+          <span class="badge">Nível: Intermediário</span>
+          <span class="badge">Formato: Aula + exercícios</span>
+        </div>
+      </div>
+
+      <div style="padding:12px 24px;">
+        <a class="btn ghost" href="#cursos">Voltar para Cursos</a>
+      </div>
+
+      <div class="detail-grid">
+        <!-- Coluna principal -->
+        <div>
+          <div class="card">
+            <h3>Resultados de Aprendizagem</h3>
+            <ul class="list">
+              <li>Aplicar cálculo do Custo Total Unitário (CTU) com precisão.</li>
+              <li>Diferenciar markup de margem e usar fórmulas estratégicas.</li>
+              <li>Identificar gatilhos mentais que influenciam decisão de compra.</li>
+              <li>Desenvolver preço final estratégico com base em cálculo, percepção de valor e posicionamento de mercado.</li>
+            </ul>
+          </div>
+
+          <div class="card accordion" style="margin-top:18px;">
+            <details open>
+              <summary>Ementa</summary>
+              <div class="acc-body">
+                <ol class="list">
+                  <li><strong>O Impacto da Precificação Errada:</strong> casos reais de prejuízo e perda de sustentabilidade.</li>
+                  <li><strong>Custo Total Unitário:</strong> custos fixos, variáveis e indiretos com aplicação prática.</li>
+                  <li><strong>Margem de Lucro Planejada e Markup:</strong> fórmulas técnicas e segurança estratégica.</li>
+                  <li><strong>Modelos de Precificação:</strong> por custo, valor percebido e posicionamento de mercado.</li>
+                  <li><strong>Gatilhos Mentais:</strong> escassez, prova social e autoridade aplicados à comunicação do preço.</li>
+                  <li><strong>Posicionamento e Canais:</strong> escolha estratégica do local de venda alinhada ao lucro planejado.</li>
+                </ol>
+              </div>
+            </details>
+
+            <details>
+              <summary>Plano de Ensino</summary>
+              <div class="acc-body">
+                <ul class="list">
+                  <li><strong>Metodologia:</strong> Método Descomplica Negócios com leitura guiada e templates práticos.</li>
+                  <li><strong>Avaliação:</strong> Preenchimento dos templates e apresentação oral das estruturas desenvolvidas.</li>
+                  <li><strong>Carga Horária:</strong> 2 horas (1h teórica + 1h prática).</li>
+                  <li><strong>Modalidade:</strong> Presencial na Casa Próspera Jacarezinho.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Aside -->
+        <aside>
+          <div class="card">
+            <h3>Inscrição e Acesso</h3>
+            <p>Selecione uma opção abaixo:</p>
+            <div class="actions">
+              <a class="btn" href="https://forms.gle/Eq7LvPVFEpdAvh64A" target="_blank" rel="noopener">Oficina Presencial</a>
+              <a class="btn ghost" href="#contato">Versão Online</a>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:18px;">
+            <h3>Requisitos</h3>
+            <ul class="list">
+              <li>Tabela de custos e histórico de vendas.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:18px;">
+            <h3>Certificado</h3>
+            <p>Emitido mediante atividades.</p>
+          </div>
+
+          <!-- MATERIAIS DE APOIO — Paleta Prospera Rio, layout limpo e didático -->
+<div class="card" style="margin-top:18px; --pr: var(--azul-principal, #092040); --sec: var(--azul-secundaria, #00B7D7); --acc: var(--amarelo-acento, #ECC203); --neu: var(--cinza-neutro, #EFF1F3); --dk: var(--azul-escuro, #021738); --bg: var(--branco, #FFFFFF);">
+  <h3 style="margin-bottom:12px;">Materiais de Apoio</h3>
+
+  <!-- Grupo 1: Materiais Didáticos (apresentação e planos) -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Materiais Didáticos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://drive.google.com/file/d/1YcjPHqjzA-mBPNvjSYs54urdUA0tE8Tx/view?usp=sharing"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Slides “Precifica &amp; LUCRA”
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1KCYkD_IH_9EOp7HwVB38bp6LHzE1PeMh/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ensino — Jacarezinho
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1qQB-s5fvFdZN54CrWV0w8vGOkxZRIAk8/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+       Plano de Ensino — Maré
+    </a>
+  </div>
+
+  <!-- separador sutil dentro do card -->
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 2: Materiais Técnicos (cadernos, e-book, manual, glossário) -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Materiais Técnicos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1x2Rb4g4mV0ADaPlolpWEZZfY0c6ey120/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--dk); text-align:center;">
+       Caderno de Atividades — Precificação e Vendas
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1HjUr7qi6GKVpqzw-cMb862Kuu3QstMEk/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--dk); text-align:center;">
+       Caderno de Atividades — Preço que Lucra
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1pUhAR41TugvNck23Gry1owob81NavWSD/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--dk); text-align:center;">
+       E-book Técnico “Preço Que Lucra”
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/12agDlswtM_WGlEsKVwR2b3pqvEGylEcS/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--dk); text-align:center;">
+       Manual Técnico — Markup
+    </a>
+
+    <a class="btn ghost"
+       href="https://docs.google.com/document/d/1B8OPzmAzzzhNBlXLNnldJ-E1CFgE7CXl/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true"
+       target="_blank" rel="noopener"
+       style="border:1px solid var(--sec); background:#FFFFFF; color:var(--dk); text-align:center;">
+       Glossário Estratégico de Termos
+    </a>
+  </div>
+
+  <!-- micro realce de interação, dentro da paleta -->
+  <style>
+    /* hover sutil sem poluição visual, respeitando paleta */
+    #curso-precificacao-vendas .card .btn.ghost:hover {
+      background: var(--neu);
+      border-color: var(--sec);
+    }
+  </style>
+</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- CURSO: PLANO DE NEGÓCIO -->
+    <section class="section course-page" id="curso-plano-negocio">
+      <div class="container">
+        <div class="course-detail">
+          <div class="course-banner">
+            <h2>Plano de Negócio Simplificado — 1 Página</h2>
+            <p>Missão, análise SWOT e metas SMART traduzidas em ação.</p>
+            <div class="badges">
+              <span class="badge">Carga horária: 2h</span>
+              <span class="badge">Nível: Iniciante</span>
+              <span class="badge">Formato: Aula + canvas</span>
+            </div>
+          </div>
+          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
+          <div class="detail-grid">
+            <div>
+              <div class="card">
+                <h3>Resultados de Aprendizagem</h3>
+                <ul class="list">
+                  <li>Estruturar um plano de negócios prático e funcional em uma página.</li>
+    <li>Organizar estrutura funcional com clareza de papéis e responsabilidades.</li>
+    <li>Construir cronograma operacional com previsibilidade.</li>
+    <li>Integrar planejamento financeiro simplificado à rotina empresarial.</li>
+                </ul>
+              </div>
+              <div class="card accordion" style="margin-top:18px;">
+                <details open><summary>Ementa</summary>
+                  <div class="acc-body">
+                    <ol class="list">
+                      <li><strong>Fundamentos do Plano de Negócios:</strong> conceito, importância e descrição estratégica (Kotler, Thiel, Drucker).</li>
+        <li><strong>Descrição do Negócio:</strong> proposta de valor e posicionamento estratégico (Osterwalder & Pigneur).</li>
+        <li><strong>Estrutura Funcional:</strong> papéis, tarefas e organograma empresarial (Drucker).</li>
+        <li><strong>Rotina Operacional:</strong> cronograma de tarefas diárias, semanais e mensais (Kahneman).</li>
+        <li><strong>Planejamento Financeiro:</strong> receitas, despesas, lucros e definição de preços (Brigham, Gitman).</li>
+        <li><strong>Integração dos Módulos:</strong> visão sistêmica da ideia à execução do plano.</li>
+                    </ol>
+                  </div>
+                <details>
+  <summary>Plano de Ensino</summary>
+  <div class="acc-body">
+    <ul class="list">
+      <li><strong>Metodologia:</strong> Método Descomplica Negócios com leitura guiada e templates práticos</li>
+      <li><strong>Avaliação:</strong> Preenchimento dos templates e apresentação oral das estruturas desenvolvidas</li>
+      <li><strong>Carga Horária:</strong> 2 horas (1h teórica + 1h prática)</li>
+      <li><strong>Modalidade:</strong> Presencial na Casa Próspera Jacarezinho</li>
+    </ul>
+  </div>
+</details>
+              </div>
+            </div>
+            <aside>
+              <div class="card">
+                <h3>Inscrição e Acesso</h3>
+                <div class="actions">
+                  <a class="btn" href="https://forms.gle/71dyJHDoBEY9Egc4A">Turma Presencial</a>
+                  <a class="btn ghost" href="#contato">Versão Online</a>
+                </div>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Requisitos</h3><ul class="list"><li>Informações básicas do negócio.</li></ul>
+              </div>
+              <div class="card" style="margin-top:18px;">
+                <h3>Certificado</h3><p>Emitido mediante atividades.</p>
+              </div>
+<!-- MATERIAIS DE APOIO — PLANO DE NEGÓCIO -->
+<div class="card" style="margin-top:18px; --pr: var(--azul-principal,#092040); --sec: var(--azul-secundaria,#00B7D7); --neu: var(--cinza-neutro,#EFF1F3); --bg: var(--branco,#FFFFFF);">
+  <h3 style="margin-bottom:12px;">Materiais de Apoio</h3>
+
+  <!-- Grupo 1: Didáticos -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Materiais Didáticos</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost" href="https://docs.google.com/document/d/1gusad95IXh-pxZncWP1qara7y2yaKHF_/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+      E-book Completo — Plano de Negócio
+    </a>
+    <a class="btn ghost" href="https://drive.google.com/file/d/1P4MB52GiheDgqd3JZ7lsNVUYfFHNsqKj/view?usp=sharing" target="_blank" rel="noopener" style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Slides da Oficina (PDF)
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1vye1TQuMKrqwVjIMRC0gsB2OBBzC_5iJ/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Caderno de Atividades — Introdução ao Plano de Negócios
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1uNiy1iRwnFHHTG0c5EbYNQXk0K7OZtL6/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Plano de Ensino — Jacarezinho
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/16O0UpCcVH6MejG3bxc6gqWrINjsa0lEn/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--pr); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Plano de Ensino — Maré
+    </a>
+  </div>
+
+  <!-- separador -->
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 2: Templates -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Templates de Aplicação</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost" href="https://docs.google.com/document/d/1suB_LuGRYz5dkUEB3Z8WXjCJQNnn39yi/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Template de Modelo de Negócio
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1xKBojSICsH2ur_fHVk3MdywQs_KbxKZm/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Template de Validação de Ideias
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1SqWOAwYRPK8AMh5aHpXfcotiU-mEQUXi/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Template de Análise de Mercado e Público-Alvo
+    </a>
+    <a class="btn ghost" href="https://docs.google.com/document/d/1o8_96AQBLqnrCgPu7-gfYWd8S4mU9u0N/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true
+" target="_blank" rel="noopener" style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Template de Projeções Financeiras
+    </a>
+  </div>
+
+  <!-- separador -->
+  <hr style="border:none; height:1px; background:var(--neu); margin:16px 0;">
+
+  <!-- Grupo 3: Extras -->
+  <h4 style="font-size:16px; font-weight:700; color:var(--pr); margin:0 0 10px;">Materiais de Acompanhamento</h4>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;">
+    <a class="btn ghost" href="https://docs.google.com/document/d/1SqWOAwYRPK8AMh5aHpXfcotiU-mEQUXi/edit?usp=sharing&ouid=106095787673108683185&rtpof=true&sd=true" target="_blank" rel="noopener" style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Planner de Acompanhamento
+    </a>
+    <a class="btn ghost" href="#contato" target="_blank" rel="noopener" style="border:1px solid var(--sec); background:#FFFFFF; color:var(--pr); text-align:center;">
+      Apresentação Oficial
+    </a>
+  </div>
+
+  <!-- hover consistente -->
+  <style>
+    #curso-plano-negocio .card .btn.ghost:hover {
+      background: var(--neu);
+      border-color: var(--sec);
+    }
+  </style>
+</div>
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contato">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Prospera Rio</h3>
+          <p>Transformando negócios com educação empresarial prática nas regiões da Maré e Jacarezinho.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#publicacoes">Publicações</a></li>
+            <li><a href="#ferramentas">Ferramentas</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Nossos Cursos</h3>
+          <ul>
+            <li><a href="#curso-fala-que-vende">Fala que Vende</a></li>
+            <li><a href="#curso-lucre-rapido">Lucre Rápido</a></li>
+            <li><a href="#curso-lucro-escondido">Lucro Escondido</a></li>
+            <li><a href="#curso-financas-descomplicadas">Finanças Descomplicadas</a></li>
+            <li><a href="#curso-gestao-financeira">Gestão Financeira</a></li>
+            <li><a href="#curso-controle-estoque">Controle de Estoque</a></li>
+            <li><a href="#curso-precificacao">Calculadora de Precificação</a></li>
+            <li><a href="#curso-whatsapp-business">WhatsApp Business</a></li>
+            <li><a href="#curso-shopee">Shopee</a></li>
+            <li><a href="#curso-mercado-livre">Mercado Livre</a></li>
+            <li><a href="#curso-kit-whatsapp">Kit WhatsApp</a></li>
+            <li><a href="#curso-identidade-marca">Identidade de Marca</a></li>
+            <li><a href="#curso-precificacao-vendas">Precificação e Vendas</a></li>
+            <li><a href="#curso-plano-negocio">Plano de Negócio</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: visionconsulting.estrategia@gmail.com</li>
+            <li>Telefone: (11) 95580-4429</li>
+            <li>Endereço: Maré · Jacarezinho — Rio de Janeiro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Prospera Rio. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navegação e estado ativo
+    const navLinks = document.querySelectorAll('a.navlink');
+    const setActive = () => {
+      const hash = window.location.hash || '#inicio';
+const categoryTabs = document.querySelectorAll('.category-tab');
+const categoryContents = document.querySelectorAll('.category-content');
+
+categoryTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const category = tab.dataset.category;
+    
+    // Remove active de todas as abas
+    categoryTabs.forEach(t => t.classList.remove('active'));
+    
+    // Adiciona active na aba clicada
+    tab.classList.add('active');
+    
+    // Mostra apenas o conteúdo correspondente
+    categoryContents.forEach(content => {
+      content.classList.remove('active');
+      if (content.id === category) {
+        content.classList.add('active');
+      }
+    });
+  });
+});
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+    };
+
+    // Mostrar/ocultar páginas de curso
+    const getCoursePages = () => Array.from(document.querySelectorAll('.course-page'));
+    const toggleCoursePage = () => {
+      const hash = window.location.hash || '';
+      const pages = getCoursePages();
+      pages.forEach(sec => sec.classList.remove('active'));
+      if (hash.startsWith('#curso-')) {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.classList.add('active');
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    // Scroll suave para links de navegação
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          history.pushState(null, '', href);
+          setActive();
+          
+          // Se for página de curso, apenas ativar; caso contrário, fazer scroll
+          if (href.startsWith('#curso-')) {
+            toggleCoursePage();
+          } else {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            // Ocultar páginas de curso se navegando para seção normal
+            getCoursePages().forEach(sec => sec.classList.remove('active'));
+          }
+        }
+      });
+    });
+
+    // Eventos de carregamentos
+    window.addEventListener('load', () => { 
+      setActive(); 
+      toggleCoursePage(); 
+      // Abre automaticamente um curso se já vier com hash #curso- na URL
+    });
+    
+    window.addEventListener('hashchange', () => { 
+      setActive(); 
+      toggleCoursePage(); 
+    });
+
+    // Ano do rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
