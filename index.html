@@ -211,30 +211,269 @@
   background-color: #d4ab00; /* Amarelo mais escuro */
 }
 
-    /* Course Detail */
-    .section.alt { background: var(--cinza-neutro); }
-    .course-detail { background: var(--branco); border-radius: 12px; box-shadow: 0 10px 26px rgba(9,32,64,.12); overflow: hidden; }
-    .course-banner { background: linear-gradient(135deg, var(--azul-secundaria), var(--azul-principal)); color: var(--branco); padding: 28px; }
-    .course-banner h2 { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 6px; }
-    .course-banner p { opacity: .95; margin-bottom: 12px; }
+ /* Course Detail */
+.section.alt { 
+  background: var(--cinza-neutro); 
+}
 
-    .detail-grid { display: grid; gap: 28px; grid-template-columns: 2fr 1fr; padding: 24px; }
-    .card { background: var(--cinza-neutro); border-radius: 10px; padding: 18px; }
-    .card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-    .list { margin-left: 18px; }
-    .list li { margin: 6px 0; }
+.course-detail { 
+  background: var(--branco); 
+  border-radius: 12px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  overflow: hidden; 
+}
 
-    .accordion { border-top: 1px solid #e3e7ea; }
-    .accordion details { border-bottom: 1px solid #e3e7ea; padding: 14px 0; }
-    .accordion summary { cursor: pointer; font-weight: 700; font-family: 'Montserrat', sans-serif; }
-    .accordion .acc-body { padding: 10px 0 0 0; }
+.course-banner { 
+  background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-secundaria) 100%); 
+  color: var(--branco); 
+  padding: 40px 30px; 
+}
 
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
-    .badge { background: var(--azul-principal); color: var(--branco); font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 99px; }
+.course-banner h2 { 
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 32px; 
+  font-weight: 700; 
+  margin-bottom: 12px; 
+}
 
-    .actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 14px; }
-    .ghost { background: transparent; border: 2px solid var(--azul-principal); color: var(--azul-principal); }
+.course-banner p { 
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.95; 
+}
 
+.badges { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
+
+.badge { 
+  background: rgba(255,255,255,0.2); 
+  padding: 8px 16px; 
+  border-radius: 20px; 
+  font-size: 14px; 
+  font-weight: 600; 
+  color: var(--branco);
+}
+
+.detail-grid { 
+  display: grid; 
+  grid-template-columns: 2fr 1fr; 
+  gap: 24px; 
+  padding: 24px; 
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card { 
+  background: var(--branco); 
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  padding: 24px; 
+}
+
+.card h3 { 
+  color: var(--azul-principal); 
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 22px; 
+  font-weight: 800; 
+  margin-bottom: 16px; 
+  padding-bottom: 12px; 
+  border-bottom: 3px solid var(--amarelo-acento); 
+}
+
+.card h4 {
+  color: var(--azul-principal);
+  font-size: 18px;
+  margin: 16px 0 12px;
+  font-weight: 700;
+}
+
+.list { 
+  list-style: none; 
+  padding: 0; 
+}
+
+.list li { 
+  padding: 10px 0; 
+  padding-left: 24px; 
+  position: relative; 
+  line-height: 1.6; 
+}
+
+.list li:before { 
+  content: "✓"; 
+  position: absolute; 
+  left: 0; 
+  color: var(--azul-secundaria); 
+  font-weight: bold; 
+  font-size: 18px; 
+}
+
+ol.list li:before {
+  content: counter(list-item) ".";
+  color: var(--azul-principal);
+  font-weight: 700;
+}
+
+/* Accordion */
+.accordion details { 
+  border-bottom: 1px solid #e0e0e0; 
+  padding: 16px 0; 
+}
+
+.accordion details:last-child {
+  border-bottom: none;
+}
+
+.accordion summary { 
+  cursor: pointer; 
+  font-weight: 700; 
+  color: var(--azul-principal); 
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 18px; 
+  padding: 8px 0; 
+  list-style: none; 
+  position: relative; 
+  padding-left: 28px; 
+}
+
+.accordion summary::-webkit-details-marker { 
+  display: none; 
+}
+
+.accordion summary:before { 
+  content: "▶"; 
+  position: absolute; 
+  left: 0; 
+  transition: transform 0.3s; 
+  color: var(--amarelo-acento); 
+}
+
+.accordion details[open] summary:before { 
+  transform: rotate(90deg); 
+}
+
+.accordion .acc-body { 
+  padding-top: 16px; 
+  color: var(--texto); 
+}
+
+/* Buttons - ORDEM IMPORTANTE */
+.btn { 
+  display: inline-block; 
+  padding: 12px 24px; 
+  background: var(--azul-secundaria); 
+  color: var(--branco); 
+  text-decoration: none; 
+  border-radius: 6px; 
+  font-weight: 600; 
+  transition: all 0.3s ease; 
+  border: 2px solid var(--azul-secundaria); 
+  text-align: center; 
+  cursor: pointer;
+}
+
+.btn:hover { 
+  background: var(--azul-principal); 
+  border-color: var(--azul-principal); 
+  color: var(--branco);
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+
+/* Botões Ghost - DEPOIS do .btn */
+.btn.ghost,
+a.btn.ghost { 
+  background: var(--branco) !important; 
+  color: var(--azul-principal) !important; 
+  border: 2px solid var(--azul-principal) !important; 
+}
+
+.btn.ghost:hover,
+a.btn.ghost:hover { 
+  background: var(--azul-principal) !important; 
+  color: var(--branco) !important;
+  border-color: var(--azul-principal) !important;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+
+/* Botões Amarelos */
+.btn-yellow,
+a.btn-yellow {
+  background: var(--amarelo-acento) !important;
+  border-color: var(--amarelo-acento) !important;
+  color: var(--azul-principal) !important;
+  font-weight: 700;
+}
+
+.btn-yellow:hover,
+a.btn-yellow:hover {
+  background: #d4a903 !important;
+  border-color: #d4a903 !important;
+  color: var(--azul-principal) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.actions { 
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+  margin-top: 16px; 
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Highlight Box */
+.highlight-box {
+  background: linear-gradient(135deg, #ECC203 0%, #f59e0b 100%);
+  color: var(--azul-principal);
+  padding: 24px;
+  border-radius: 8px;
+  margin-top: 18px;
+}
+
+.highlight-box h3 {
+  color: var(--azul-principal);
+  border-color: var(--azul-principal);
+}
+
+.highlight-box p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Material Section */
+.material-section {
+  margin-top: 18px;
+  background: linear-gradient(135deg, #FFF9E6 0%, var(--branco) 100%);
+  border-left: 4px solid var(--amarelo-acento);
+}
+
+/* Utilities */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--cinza-neutro);
+  margin: 16px 0;
+}
+
+strong {
+  color: var(--azul-principal);
+  font-weight: 700;
+}
     /* Footer */
     footer { background: var(--azul-principal); color: var(--branco); padding: 44px 0 26px; margin-top: 40px; }
     .footer-content { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 20px; }
@@ -338,6 +577,7 @@
     background: rgba(0,0,0,.18);
     border-radius: 999px;
   }
+
 }
 
   </style>
@@ -1542,80 +1782,322 @@ s            </aside>
       </div>
     </section>
 
-    <!-- CURSO: GESTÃO FINANCEIRA -->
-    <section class="section course-page" id="curso-gestao-financeira">
-      <div class="container">
-        <div class="course-detail">
-          <div class="course-banner">
-            <h2>Gestão Financeira Empresarial — Caixa, Orçamento e Indicadores</h2>
-            <p>Do controle diário à visão de orçamento por centros de custo.</p>
-            <div class="badges">
-              <span class="badge">Carga horária: 4h</span>
-              <span class="badge">Nível: Intermediário</span>
-              <span class="badge">Formato: Aula + planilhas</span>
-            </div>
-          </div>
-          <div style="padding:12px 24px;"><a class="btn ghost" href="#cursos">Voltar para Cursos</a></div>
-          <div class="detail-grid">
-            <div>
-              <div class="card">
-                <h3>Resultados de Aprendizagem</h3>
-                <ul class="list">
-                  <li>Implantar orçamento e previsão de caixa.</li>
-                  <li>Definir centros de custo e metas.</li>
-                  <li>Acompanhar KPIs financeiros críticos.</li>
-                </ul>
-              </div>
-              <div class="card accordion" style="margin-top:18px;">
-                <details open>
-                  <summary>Ementa</summary>
-                  <div class="acc-body">
-                    <ol class="list">
-                      <li>Planejamento financeiro anual.</li>
-                      <li>Centros de custo e alocação.</li>
-                      <li>KPIs (margem, PE, ROAS básico).</li>
-                      <li>Rotinas e rituais de gestão.</li>
-                    </ol>
-                  </div>
-                </details>
-                <details>
-                  <summary>Materiais</summary>
-                  <div class="acc-body">
-                    <ul class="list">
-                      <li>Template de orçamento.</li>
-                      <li>Planilha de previsão de caixa.</li>
-                      <li>Dashboard simplificado.</li>
-                    </ul>
-                  </div>
-                </details>
-              </div>
-            </div>
-            <aside>
-              <div class="card">
-                <h3>Inscrição e Acesso</h3>
-                <div class="actions">
-                <a class="btn" href="https://wa.me/5521975150995?text=Olá!%20Gostaria%20de%20me%20inscrever%20na%20turma%20presencial%20do%20curso%20Gestão Financeira" 
-   target="_blank" 
-   rel="noopener"
-   aria-label="Inscrever-se via WhatsApp para o curso Gestão Financeira">
-   Inscrever via WhatsApp
-</a>
+<!-- CURSO: GESTÃO FINANCEIRA -->
 
-                  <a class="btn ghost" href="#contato">Versão Online</a>
-                </div>
-              </div>
-              <div class="card" style="margin-top:18px;">
-                <h3>Requisitos</h3>
-                <ul class="list"><li>Histórico de despesas/receitas dos últimos 3 meses.</li></ul>
-              </div>
-              <div class="card" style="margin-top:18px;">
-                <h3>Certificado</h3><p>Emitido mediante presença e atividades.</p>
-              </div>
-            </aside>
+    <section class="section course-page" id="curso-gestao-financeira">
+    <div class="container">
+      <div class="course-detail">
+        <div class="course-banner">
+          <h2>Gestão Financeira Empresarial — Caixa, Orçamento e Indicadores</h2>
+          <p>Transforme o caos financeiro em controle estratégico. Aprenda a organizar seu caixa, planejar o futuro e tomar decisões baseadas em números reais.</p>
+          <div class="badges">
+            <span class="badge">Carga horária: 4h</span>
+            <span class="badge">Nível: Intermediário</span>
+            <span class="badge">Formato: Aula + Planilhas</span>
+            <span class="badge">Público: Empreendedores</span>
           </div>
         </div>
+
+        <div style="padding:12px 24px;">
+          <a class="btn ghost" href="#cursos">Voltar para Cursos</a>
+        </div>
+
+        <div class="detail-grid">
+          <!-- Coluna Principal -->
+          <div>
+            <div class="card">
+              <h3>O que você vai aprender</h3>
+              <ul class="list">
+                <li>Criar um orçamento anual realista e acompanhar mês a mês se está no caminho certo.</li>
+                <li>Fazer previsão de caixa para evitar surpresas e nunca mais ficar sem dinheiro para pagar fornecedores.</li>
+                <li>Organizar centros de custo para saber exatamente quanto cada área do negócio gasta.</li>
+                <li>Acompanhar KPIs financeiros críticos: margem, ponto de equilíbrio, retorno sobre investimento.</li>
+                <li>Criar rotinas e rituais de gestão financeira que funcionam no dia a dia sem burocracia.</li>
+              </ul>
+            </div>
+
+            <!-- DESTAQUE -->
+            <div class="highlight-box">
+              <h3>Por que esse curso é diferente?</h3>
+              <p>
+                Nada de teoria chata de contabilidade. Você vai trabalhar com planilhas reais, colocar os números do SEU negócio e sair daqui com um sistema de gestão financeira funcionando. É prático, direto e pensado para quem não tem tempo a perder.
+              </p>
+            </div>
+
+            <div class="card accordion" style="margin-top:18px;">
+              <details open>
+                <summary>Conteúdo Programático Completo</summary>
+                <div class="acc-body">
+                  <h4>Módulo 1: Planejamento Financeiro Anual (1h)</h4>
+                  <ul class="list">
+                    <li>Como criar metas financeiras realistas para o seu negócio.</li>
+                    <li>Orçamento anual: projetar receitas, custos fixos e variáveis.</li>
+                    <li>Sazonalidade: como planejar os meses fracos e fortes.</li>
+                    <li>Prática: montar seu orçamento anual na planilha.</li>
+                  </ul>
+
+                  <h4>Módulo 2: Previsão de Caixa e Fluxo (1h)</h4>
+                  <ul class="list">
+                    <li>Diferença entre lucro e caixa (por que você pode ter lucro e não ter dinheiro).</li>
+                    <li>Como fazer previsão de caixa semanal e mensal.</li>
+                    <li>Identificar gargalos de caixa antes que virem problema.</li>
+                    <li>Prática: criar sua previsão de caixa para os próximos 3 meses.</li>
+                  </ul>
+
+                  <h4>Módulo 3: Centros de Custo e Alocação (1h)</h4>
+                  <ul class="list">
+                    <li>O que são centros de custo e por que você precisa deles.</li>
+                    <li>Como dividir seu negócio em áreas (vendas, produção, marketing, administrativo).</li>
+                    <li>Alocar despesas corretamente para saber onde o dinheiro está indo.</li>
+                    <li>Prática: definir centros de custo e distribuir suas despesas.</li>
+                  </ul>
+
+                  <h4>Módulo 4: KPIs Financeiros e Rotinas (1h)</h4>
+                  <ul class="list">
+                    <li>KPIs essenciais: margem de contribuição, ponto de equilíbrio, ROI, ROAS.</li>
+                    <li>Como criar um dashboard simples para acompanhar seus números.</li>
+                    <li>Rotinas financeiras: o que fazer diariamente, semanalmente e mensalmente.</li>
+                    <li>Prática: montar seu dashboard e definir suas rotinas de gestão.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details>
+                <summary>Como funciona na prática</summary>
+                <div class="acc-body">
+                  <ul class="list">
+                    <li><strong>Formato:</strong> 50% teoria aplicada + 50% mão na massa com planilhas reais.</li>
+                    <li><strong>Atividades:</strong> Você trabalha com os números do seu próprio negócio durante o curso.</li>
+                    <li><strong>Duração:</strong> 4 horas com intervalos (divididas em 4 módulos de 1h cada).</li>
+                    <li><strong>Onde:</strong> Presencial nas Casas Próspera ou versão online ao vivo com suporte.</li>
+                    <li><strong>Material:</strong> Todas as planilhas são suas para usar depois, com vídeos tutoriais de suporte.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details>
+                <summary>Esse curso é para você se...</summary>
+                <div class="acc-body">
+                  <ul class="list">
+                    <li>Você já tem um negócio funcionando mas sente que o financeiro está uma bagunça.</li>
+                    <li>Tem dificuldade em saber se está ganhando ou perdendo dinheiro de verdade.</li>
+                    <li>Vive com o caixa apertado e não consegue planejar o futuro.</li>
+                    <li>Quer profissionalizar a gestão financeira sem contratar contador ainda.</li>
+                    <li>Precisa tomar decisões melhores sobre investimentos e cortes de custos.</li>
+                    <li>Já fez o curso de Precificação e quer organizar a gestão completa.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details>
+                <summary>Exercícios Práticos do Curso</summary>
+                <div class="acc-body">
+                  <p style="margin-bottom:12px;">Durante o curso você vai fazer:</p>
+                  <ul class="list">
+                    <li><strong>Orçamento Anual:</strong> Projetar receitas e despesas mês a mês para os próximos 12 meses.</li>
+                    <li><strong>Previsão de Caixa:</strong> Criar planilha de fluxo de caixa projetado para 3 meses.</li>
+                    <li><strong>Centros de Custo:</strong> Mapear todas as despesas do negócio e alocar por área.</li>
+                    <li><strong>Cálculo de Margem:</strong> Descobrir a margem real de cada produto/serviço.</li>
+                    <li><strong>Ponto de Equilíbrio:</strong> Calcular quanto precisa vender para não ter prejuízo.</li>
+                    <li><strong>Dashboard de KPIs:</strong> Montar painel de indicadores para acompanhamento diário.</li>
+                    <li><strong>Rotinas Financeiras:</strong> Definir checklist de tarefas diárias, semanais e mensais.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details>
+                <summary>Casos Reais Trabalhados no Curso</summary>
+                <div class="acc-body">
+                  <p style="margin-bottom:12px;">Você vai analisar casos reais de negócios como:</p>
+                  <ul class="list">
+                    <li>Salão de beleza que tinha lucro no papel mas vivia sem caixa.</li>
+                    <li>Loja de roupas que descobriu que 30% dos produtos davam prejuízo.</li>
+                    <li>Restaurante que organizou centros de custo e reduziu desperdício em 40%.</li>
+                    <li>E-commerce que criou previsão de caixa e conseguiu planejar Black Friday.</li>
+                    <li>Prestador de serviços que definiu KPIs e aumentou a margem em 15%.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details>
+                <summary>Ferramentas que você vai dominar</summary>
+                <div class="acc-body">
+                  <ul class="list">
+                    <li><strong>Template de Orçamento Anual:</strong> Projeção mês a mês com comparativo real x orçado.</li>
+                    <li><strong>Planilha de Previsão de Caixa:</strong> Fluxo de caixa projetado com alertas automáticos.</li>
+                    <li><strong>Dashboard de KPIs:</strong> Painel visual com gráficos e indicadores principais.</li>
+                    <li><strong>Planilha de Centros de Custo:</strong> Controle de gastos por área do negócio.</li>
+                    <li><strong>Calculadora de Ponto de Equilíbrio:</strong> Saiba exatamente quanto precisa vender.</li>
+                    <li><strong>Análise de Margem:</strong> Descubra a rentabilidade real de cada produto/serviço.</li>
+                    <li><strong>DRE Simplificado:</strong> Demonstração de resultado de forma simples e prática.</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside>
+            <div class="card">
+              <h3>Inscrição e Acesso</h3>
+              <p>Escolha sua modalidade de participação:</p>
+              <div class="actions">
+                <a class="btn" 
+                   href="https://wa.me/5521975150995?text=Olá!%20Gostaria%20de%20me%20inscrever%20no%20curso%20de%20Gestão%20Financeira%20Empresarial%20(presencial)" 
+                   target="_blank" 
+                   rel="noopener"
+                   aria-label="Inscrever-se via WhatsApp para turma presencial">
+                   Turma Presencial
+                </a>
+                <a class="btn ghost" 
+                   href="https://wa.me/5521975150995?text=Olá!%20Quero%20informações%20sobre%20o%20curso%20online%20de%20Gestão%20Financeira"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Informações sobre versão online">
+                   Versão Online
+                </a>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:18px;">
+              <h3>O que você precisa</h3>
+              <ul class="list">
+                <li>Negócio em funcionamento há pelo menos 3 meses.</li>
+                <li>Histórico de despesas e receitas dos últimos 3 meses.</li>
+                <li>Notebook/tablet para trabalhar nas planilhas durante o curso.</li>
+                <li>Google Sheets ou Excel instalado.</li>
+              </ul>
+            </div>
+
+            <div class="card" style="margin-top:18px;">
+              <h3>Certificado</h3>
+              <p>Você recebe certificado de conclusão da Próspera Rio mediante presença integral (4h) e entrega de todas as planilhas preenchidas com os dados do seu negócio.</p>
+            </div>
+
+            <div class="card" style="margin-top:18px;">
+              <h3>Cursos Relacionados</h3>
+              <p style="margin-bottom:12px;">Complemente sua formação:</p>
+              <div class="actions">
+                <a class="btn ghost" href="#curso-precificacao">Precificação Estratégica</a>
+                <a class="btn ghost" href="#curso-financeiro-basico">Controle Financeiro Básico</a>
+              </div>
+            </div>
+
+            <!-- MATERIAL PARA FACILITADORES -->
+            <div class="card material-section">
+              <h3 style="color: var(--azul-principal);">Material para Facilitadores</h3>
+              <p style="margin-bottom: 15px;">Acesse o roteiro completo de aplicação do curso:</p>
+              <div class="actions">
+                <a class="btn btn-yellow" 
+                   href="#contato" 
+                   aria-label="Solicitar guia do facilitador">
+                   Guia do Facilitador
+                </a>
+              </div>
+            </div>
+
+            <!-- MATERIAIS DO CURSO -->
+            <div class="card" style="margin-top:18px;">
+              <h3>Materiais do Curso</h3>
+
+              <h4>Material do Professor</h4>
+              <div class="btn-grid">
+                <a class="btn btn-yellow" 
+                   href="#contato" 
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Acessar slides do curso">
+                   Slides do Curso
+                </a>
+                <a class="btn btn-yellow" 
+                   href="#contato" 
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Acessar plano de ensino">
+                   Plano de Ensino Completo
+                </a>
+              </div>
+
+              <hr>
+
+              <h4>Recursos Didáticos</h4>
+              <div class="btn-grid">
+                <a class="btn ghost" 
+                   href="#contato" 
+                   aria-label="Solicitar apostila do curso">
+                   Apostila do Curso
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   aria-label="Acessar casos práticos">
+                   Casos Práticos (PDF)
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   aria-label="Acessar vídeos tutoriais">
+                   Vídeos Tutoriais
+                </a>
+              </div>
+
+              <hr>
+
+              <h4>Ferramentas Práticas (Planilhas)</h4>
+              <div class="btn-grid">
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar template de orçamento anual">
+                 Template de Orçamento Anual
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar planilha de previsão de caixa">
+                   Planilha de Previsão de Caixa
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar dashboard de KPIs">
+                    Dashboard de KPIs Financeiros
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar planilha de centros de custo">
+                  Centros de Custo
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar calculadora de ponto de equilíbrio">
+                Calculadora de Ponto de Equilíbrio
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar análise de margem">
+                   Análise de Margem de Contribuição
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar template de DRE">
+                   Template de DRE Simplificado
+                </a>
+                <a class="btn ghost" 
+                   href="#contato" 
+                   style="border-color: var(--azul-secundaria);"
+                   aria-label="Baixar checklist de rotinas">
+              Checklist de Rotinas Financeiras
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 <!-- CURSO: CONTROLE DE ESTOQUE -->
 <section class="section course-page" id="curso-controle-estoque">
